@@ -207,8 +207,8 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-950 transition-all duration-300 relative">
-      <div className="absolute top-1/4 right-5 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="projects" className="py-24 bg-white dark:bg-slate-950 transition-all duration-300 relative overflow-hidden">
+      <div className="absolute top-1/4 right-5 w-72 h-72 bg-pink-100/30 dark:bg-slate-800/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -218,9 +218,9 @@ export default function FeaturedProjects() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 font-mono mb-2"
+            className="text-xs font-bold uppercase tracking-widest text-pink-500 dark:text-pink-400 font-mono mb-2"
           >
-            MASTERCASE CAPSTONES
+            MY PLAYFUL SANDBOXES 🚀
           </motion.h3>
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}
@@ -230,14 +230,14 @@ export default function FeaturedProjects() {
           >
             Featured Software Projects
           </motion.h2>
-          <div className="w-16 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mt-4 rounded-full" />
-          <p className="text-slate-600 dark:text-slate-400 mt-4 text-sm sm:text-base">
-            Click on any project tab to view its features and launch the actual visual simulation interface sandbox.
+          <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-indigo-500 mx-auto mt-4 rounded-full" />
+          <p className="text-slate-650 dark:text-slate-400 mt-4 text-sm sm:text-base leading-relaxed">
+            Ready to test? Tap on any project below and click <strong className="text-pink-500">Launch Live Sandbox</strong> to play with visual real-time web simulation interfaces!
           </p>
         </div>
 
         {/* Project Section Selector Tabs */}
-        <div className="flex justify-center border-b border-slate-200 dark:border-slate-800 mb-12">
+        <div className="flex justify-center border-b border-rose-100/50 dark:border-slate-800 mb-12">
           <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8">
             {projectsData.map((proj) => (
               <button
@@ -248,7 +248,7 @@ export default function FeaturedProjects() {
                 }}
                 className={`py-4 text-sm font-bold font-display cursor-pointer relative transition-all ${
                   activeTab === proj.id
-                    ? 'text-blue-600 dark:text-blue-400'
+                    ? 'text-pink-500 dark:text-pink-400'
                     : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
                 }`}
               >
@@ -256,7 +256,7 @@ export default function FeaturedProjects() {
                 {activeTab === proj.id && (
                   <motion.div
                     layoutId="activeProjBar"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-500 dark:bg-pink-450"
                   />
                 )}
               </button>
@@ -277,10 +277,10 @@ export default function FeaturedProjects() {
                     <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-slate-950 dark:text-white mb-2">
                       {proj.title}
                     </h3>
-                    <p className="text-sm font-semibold font-mono text-purple-600 dark:text-purple-400 mb-4 h-auto">
+                    <p className="text-sm font-bold font-mono text-purple-500 dark:text-purple-400 mb-4 h-auto">
                       {proj.tagline}
                     </p>
-                    <p className="text-slate-650 dark:text-slate-350 leading-relaxed text-sm sm:text-base">
+                    <p className="text-slate-655 dark:text-slate-350 leading-relaxed text-sm sm:text-base">
                       {proj.description}
                     </p>
                   </div>
@@ -292,7 +292,7 @@ export default function FeaturedProjects() {
                       {proj.techStack.map((tech) => (
                         <span 
                           key={tech}
-                          className="px-2.5 py-1 text-xs font-semibold font-mono rounded-md bg-slate-100 dark:bg-slate-850 text-slate-700 dark:text-slate-350 border border-slate-200/40 dark:border-slate-800/40"
+                          className="px-3 py-1.5 text-xs font-bold font-mono rounded-xl bg-pink-50/50 dark:bg-pink-950/20 text-pink-600 dark:text-pink-300 border border-pink-100/40 dark:border-pink-905/20"
                         >
                           {tech}
                         </span>
@@ -302,10 +302,10 @@ export default function FeaturedProjects() {
 
                   {/* Bullet features */}
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-450 font-mono mb-2.5">Core Capabilities</h4>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-455 font-mono mb-2.5">Core Capabilities</h4>
                     <ul className="grid grid-cols-1 gap-2">
                       {proj.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start text-sm text-slate-600 dark:text-slate-400 gap-2.5">
+                        <li key={idx} className="flex items-start text-sm text-slate-655 dark:text-slate-400 gap-2.5">
                           <CheckCircle className="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
@@ -314,12 +314,12 @@ export default function FeaturedProjects() {
                   </div>
 
                   {/* Static buttons section */}
-                  <div className="flex flex-wrap gap-3 pt-4">
+                  <div className="flex flex-wrap gap-4 pt-4">
                     <a
                       href={proj.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 px-5 py-2.5 bg-slate-900 hover:bg-black text-white dark:bg-slate-800 dark:hover:bg-slate-700 rounded-lg text-sm font-medium transition-all"
+                      className="inline-flex items-center space-x-2 px-6 py-3 bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white dark:border-slate-750 rounded-2xl text-sm font-bold shadow-sm transition-all duration-300 transform hover:scale-105"
                     >
                       <Github className="w-4 h-4" />
                       <span>GitHub Code</span>
@@ -328,9 +328,9 @@ export default function FeaturedProjects() {
                     {/* Live interactive simulation launcher button */}
                     <button
                       onClick={() => setSelectedDemo(proj.id)}
-                      className="inline-flex items-center space-x-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium shadow-md shadow-blue-500/20 hover:shadow-lg transition-all cursor-pointer"
+                      className="inline-flex items-center space-x-2.5 px-6 py-3 bg-gradient-to-r from-pink-500 to-indigo-500 hover:from-pink-600 hover:to-indigo-650 text-white rounded-2xl text-sm font-bold shadow-md shadow-pink-500/20 hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
                     >
-                      <Play className="w-4 h-4" />
+                      <Play className="w-4 h-4 animate-ping" style={{ animationDuration: '3s' }} />
                       <span>Launch Live Sandbox</span>
                     </button>
                   </div>

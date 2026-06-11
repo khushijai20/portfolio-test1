@@ -17,8 +17,8 @@ export default function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-24 bg-white dark:bg-slate-900 transition-all duration-300 relative">
-      <div className="absolute bottom-1/4 left-10 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="achievements" className="py-24 bg-[#FAFAFC] dark:bg-slate-900 transition-all duration-300 relative overflow-hidden">
+      <div className="absolute bottom-1/4 left-10 w-64 h-64 bg-pink-100/30 dark:bg-slate-800/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -28,9 +28,9 @@ export default function Achievements() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono mb-2"
+            className="text-xs font-bold uppercase tracking-widest text-pink-500 dark:text-pink-400 font-mono mb-2"
           >
-            CREDENTIALS & MILESTONES
+            CREDENTIALS & MILESTONES 🏆
           </motion.h3>
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}
@@ -40,7 +40,7 @@ export default function Achievements() {
           >
             Key Achievements & Goals
           </motion.h2>
-          <div className="w-16 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-indigo-500 mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Bento grid layout for achievements */}
@@ -51,22 +51,22 @@ export default function Achievements() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-slate-50 dark:bg-slate-850 p-6 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 shadow-sm hover:shadow-md transition-all flex flex-col justify-between text-left h-full"
+              transition={{ duration: 0.5, delay: idx * 0.1, type: 'spring' }}
+              whileHover={{ scale: 1.03, rotate: idx % 2 === 0 ? 0.5 : -0.5 }}
+              className="bg-white dark:bg-slate-900 p-6 rounded-3xl border-2 border-slate-50 dark:border-slate-800 shadow-md hover:shadow-xl transition-all flex flex-col justify-between text-left h-full"
             >
               <div className="space-y-4">
                 {/* Custom Icon element */}
-                <div className="p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200/40 dark:border-slate-700/40 shadow-inner w-fit">
+                <div className="p-3 bg-[#FCFCFD] dark:bg-slate-800 rounded-2xl border-2 border-slate-50 dark:border-slate-700 shadow-inner w-fit">
                   {getAchievementIcon(idx)}
                 </div>
                 
-                <h4 className="text-base font-bold font-display text-slate-900 dark:text-white leading-snug">
+                <h4 className="text-base font-extrabold font-display text-slate-900 dark:text-white leading-snug">
                   {ach.title}
                 </h4>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-650 dark:text-slate-400 leading-relaxed mt-3">
+              <p className="text-xs sm:text-sm text-slate-655 dark:text-slate-400 leading-relaxed mt-4">
                 {ach.description}
               </p>
             </motion.div>
